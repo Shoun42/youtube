@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
+import 'screen2.dart';
+
 main() {
   runApp(MyFastApp());
+
+  List<String> sagor= [
+    "SAGOR",
+    "PRINCE",
+    "SHOUN",
+  ];
+  // print(sagor.length);
+
 }
 
 class MyFastApp extends StatelessWidget {
@@ -10,7 +20,11 @@ class MyFastApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+
+      //home: HomeScreen(),
+      home: screen2(),
+
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -30,6 +44,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyanAccent.shade400,
+        leading: Icon(Icons.menu,color: Colors.deepOrange,),
+        title: Text("title",style: TextStyle(color: Colors.red),),
+
+        actions: [
+          Icon(Icons.lightbulb,color: Colors.amber,),
+          Icon(Icons.send,color: Colors.blue,),
+          Icon(Icons.favorite,color: Colors.red.shade500,),
+          Icon(Icons.add_photo_alternate_rounded,color: Colors.deepPurple,),
+        ],
+      ),
+
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
